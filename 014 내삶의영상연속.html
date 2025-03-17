@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 처음부터-다시한번-맘대로 </title>
+    <style>
+    </style>
+</head>
+<script language="JavaScript">
+   var ahnno=-1;
+   ahnno = Math.floor(Math.random() * files.length);
+</script>
+<body>
+	<div id="video_list">
+		<video controls autoplay width="400px" height="400px"  target="idx-contents" ></video>
+	</div>
+	 
+                      
+<p>
+<button id="next"> 다음 것 (시작) </button>
+<button id="onemore"> 한번 더 </button>
+<button id="before"> 이전 것 </button>
+<button id="random"> 맘대로 </button>
+<button id="number"> 번호 입력 -> 확인 --> 다음 것</button></button>
+</p>
+<p>	
+	<span><input   type="number" id="guess1" value=39></span>
+	<input type="button" onclick="Calculate()" value="확인">
+	<script>
+	  function Calculate() {
+		 var GuessCon1 = document.getElementById("guess1").value;
+		 ahnno = GuessCon1-1;
+	   }
+	</script>
+</p>
+<p id='name'> 현재 연주되는 곡명이 보입니다. </p>  
+<p id="text2"> ahnno -->> 연주곡 번호 </p>   
+<p id="text"> ahn --->> 연주곡 간신히 찾았다. </p> 
+<p id="text3">      
+<script>
+	         document.getElementById('next').addEventListener('click', function(){
+            nextvideo();
+         }, false);
+      // 
+  
+         document.getElementById('onemore').addEventListener('click', function(){
+            onemorevideo();
+         }, false);
+      //
+     	 document.getElementById('before').addEventListener('click', function(){
+            beforevideo();
+         }, false);    
+		 
+       // 
+         document.getElementById('number').addEventListener('click', function(){
+            numbervideo();
+         }, false);    
+		 
+      //
+      	 document.getElementById('random').addEventListener('click', function(){
+            randomvideo();
+         }, false);         
+</script>
+<script>
+      // Playlist array
+         var files = [
+				"D:/Ahn39Life/Life/000우린하나/003옘/2020-07-11 안예미 임준상.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2022-05-08 예미집 어버이날/2022-05-08 어버이날 행사_Trim.mp4",
+
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/100 인사-행복하게 살아가기.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/200 채널 소개.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/900 마무리 영상.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/100 로고.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/200 인사 (2).mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/200 인사 (1).mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/200 인사 (3).mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/200 인사 (4).mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/300 채널 소개.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/900 마무리 음악2.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/100 인사10.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/20 노마드마크님 감사 영상.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/200 노마드마크님 감사 영상.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/500 화면전환용.mp4",
+		 
+				"D:/Ahn39Life/GoodVideo/2023-02-02 골드프라자 안상구 생활모습.mp4",
+				"D:/Ahn39Life/GoodVideo/2023-02-14 억장이 무너져-정민교 작곡 노래.mp3",
+				"D:/Ahn39Life/GoodVideo/곰믹스-스크립트-전환.mp4",
+				"D:/Ahn39Life/GoodVideo/교통사고로 사람을 죽였습니다 이 죄책감을 (2).mp4",
+				"D:/Ahn39Life/GoodVideo/기발하네 사람 살리네.mp4",
+				"D:/Ahn39Life/GoodVideo/김유하 7살 아 옛날이여.mp4",
+				"D:/Ahn39Life/GoodVideo/눈 내리는 모습.mp4",
+				"D:/Ahn39Life/GoodVideo/모두 다 담았습니다. 행복까지.gif",
+				"D:/Ahn39Life/GoodVideo/박완서 몸값 51억원1.mp4",
+				"D:/Ahn39Life/GoodVideo/박완서 몸값 51억원2.mp4",
+				"D:/Ahn39Life/GoodVideo/분재 모양-멋있다.mp4",
+				"D:/Ahn39Life/GoodVideo/쇼펜하우어 불행한 일 잊어야한다.mp4",
+				"D:/Ahn39Life/GoodVideo/쇼펜하우어의 욕망과 처세에 관한 조언 인간관계.mp4",
+				"D:/Ahn39Life/GoodVideo/쌀이 안 떨어지게 해야지.mp4",
+				"D:/Ahn39Life/GoodVideo/아빠와 조율하기.mp4",
+				"D:/Ahn39Life/GoodVideo/어린이와 아빠의 웃음-밥.mp4",
+				"D:/Ahn39Life/GoodVideo/위험한 취객 사망사고.mp4",
+				"D:/Ahn39Life/GoodVideo/텍스트 곰믹스-스크립트-전환.mp4",
+				"D:/Ahn39Life/GoodVideo/틀니의 생일축하.mp4",
+				"D:/Ahn39Life/GoodVideo/행복은 삶의 목적이 아니다_쇼펜하우어 (2).mp4",
+				"D:/Ahn39Life/GoodVideo/행복은 삶의 목적이 아니다_쇼펜하우어 (3).mp4",
+				"D:/Ahn39Life/GoodVideo/행복은 삶의 목적이 아니다_쇼펜하우어 (4).mp4",
+
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/재미있고 유익한 컨텐츠가 제일 중요합니다.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/001 [강추강추] 영어문장사이트 만들기 - Trim.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/003 인간관계 자존감 연애 돈벌기-자신있게 (2).mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/004 예시 work with me 4K walk white noise.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/002 음악 무료로 받기.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-28 Youtube 시작-노마드마크/곰믹스맥스 영상편집 튜토리얼.mp4",
+
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/노들섬에서 피아노 치는 남자 안39.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/세배-몸도 건강 마음도 건강.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/노들섬 피아노1-학교종.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/노들섬 피아노2-천부여 의지 없어서.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/노들섬 피아노3-와 되네 처음 친 피아노 성공.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/KakaoTalk_20230121_191716787.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/KakaoTalk_20230121_151933339.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/KakaoTalk_20230121_191405694.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-21 설-kiki-아구-목동-노들섬/KakaoTalk_20230121_150305197.mp4",
+
+		 
+		 
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-31 송년회 예미생일/2022년 송년회 겸 미 생일잔치.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-31 송년회 예미생일/국수 만들기 쑈.mp4",
+		 
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/1차 838분 내려옴.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/2차 939분 들어옴.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/3차 946 내려옴.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/4차 1034분 내려옴.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/5차.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/6차.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/7차.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/8차 1410분.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/9차 1543분.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/10차 1601분.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/11차.mp4",
+				"D:/Ahn39Life/Life/2023 정리의해/2023-01-01 박작가의 스토킹/12차 1736분.mp4",
+
+		 
+				 "D:/Ahn39Life/Ahn39/2022 내삶요약/2022-11-27 안39 작퉁2.mp4",
+				 "D:/Ahn39Life/Ahn39/2022 내삶요약/2022-11-01 화장실 벽청소-치약 남은 것으로.mp4",
+				 "D:/Ahn39Life/Ahn39/2022 내삶요약/2022-11-03 백내장 약 가리유니.mp4",
+		 
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/2022-12-03 가족을 위한 우크렐레 발표회 (4).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/2022-12-03 가족을 위한 우크렐레 발표회 (3).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/2022-12-03 가족을 위한 우크렐레 발표회 (2).mp4",	 
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/KakaoTalk_20221204_114048542.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/KakaoTalk_20221204_114057373.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/KakaoTalk_20221204_114042184.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/KakaoTalk_20221204_114101522.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/KakaoTalk_20221204_114051819.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/KakaoTalk_20221204_114046043.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-12-03 김장 옘취직성공/KakaoTalk_20221204_114033765.mp4",
+		 
+				 "D:/Ahn39Life/Life/600 즐기기/2022-10-01 퀵보드와 마라톤/동작대교 및 달리기 마지막 스퍼트.mp4",
+				 "D:/Ahn39Life/Life/600 즐기기/2022-10-01 퀵보드와 마라톤/퀵보드 처음 타보기.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-10-28 정읍과 함라/KakaoTalk_20221029_172905274.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-10-28 정읍과 함라/KakaoTalk_20221029_172909515.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-10-28 정읍과 함라/KakaoTalk_20221029_172947204.mp4",		 
+				"D:/Ahn39Life/GoodVideo/[강추] 축구신들의 발재간 놀라워용 (2).mp4",
+				"D:/Ahn39Life/GoodVideo/[강추] 축구신들의 발재간 놀라워용 (3).mp4",
+				"D:/Ahn39Life/GoodVideo/[강추] 축구신들의 발재간 놀라워용 (4).mp4",
+				"D:/Ahn39Life/GoodVideo/Passes That Need Explanation (2).mp4",
+				"D:/Ahn39Life/GoodVideo/Passes That Need Explanation (3).mp4",
+				"D:/Ahn39Life/GoodVideo/Skills That Need Explanation (2).mp4",
+				"D:/Ahn39Life/GoodVideo/Skills That Need Explanation (3).mp4",
+				"D:/Ahn39Life/GoodVideo/Skills That Need Explanation (4).mp4",
+				"D:/Ahn39Life/GoodVideo/Skills That Need Explanation (5).mp4",
+				"D:/Ahn39Life/GoodVideo/안산시 대부도 시아버지 딸집3일만 싫어.mp4",
+				"D:/Ahn39Life/GoodVideo/안산시 대부도 며느리 남편 묘소에 다녀오면 힘이 생겨요.mp4",
+				"D:/Ahn39Life/GoodVideo/안산시 대부도 시아버지 속셈을 보라.mp4",
+		 
+			      "D:/Ahn39Life/Life/500마무리/2022-02-01설잔치/KakaoTalk_20220201_154427596.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-02-01설잔치/KakaoTalk_20220201_154435963.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-02-01설잔치/KakaoTalk_20220201_154437480.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-02-01설잔치/KakaoTalk_20220201_154441364.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-02-01설잔치/KakaoTalk_20220201_154451043.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-02-01설잔치/KakaoTalk_20220201_154459502.mp4",
+				"D:/Ahn39Life/Life/500마무리/2021-12-04 주탕수육과 김장/KakaoTalk_20211204_174202581.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2021-12-04 주탕수육과 김장/KakaoTalk_20211204_174212145.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2021-12-04 주탕수육과 김장/KakaoTalk_20211204_174215766.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2021-12-04 주탕수육과 김장/KakaoTalk_20211204_174226689.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2021-12-04 주탕수육과 김장/KakaoTalk_20211204_174228513.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2021-12-04 주탕수육과 김장/KakaoTalk_20211204_174237091.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191447113.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191453799.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191458933.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191501460.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191528265.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191533603.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191340489.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191411250.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191429933.mp4",
+			      "D:/Ahn39Life/Life/500마무리/2022-01-15 예미 생일 잔치/KakaoTalk_20220115_191438948.mp4",
+				"D:/Ahn39Life/Life/400버티기/2018설악쏘라노/2018-07-21 루미큐브1.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2018설악쏘라노/2018-07-21 루미큐브2.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2018설악쏘라노/2018-07-22 미시령 고개1.mp4",
+				"D:/Ahn39Life/Life/400버티기/2018설악쏘라노/2018-07-22 미시령 고개2.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2018설악쏘라노/2018-07-22 한계령.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2018설악쏘라노/2018-07-23 미시령 별보기.mp4", 
+			      
+				"D:/Ahn39Life/Life/400버티기/2019-05-04KAIST/2019-05-02 예슬 카이스트 기숙사.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2019-05-04KAIST/temp_1557019122810.-314550302.mp4", 
+			      
+				"D:/Ahn39Life/Life/400버티기/2019횡성서초휴양소/KakaoTalk_Video_20190908_1553_55_458.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2019횡성서초휴양소/KakaoTalk_Video_20190908_1554_34_554.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2019횡성서초휴양소/KakaoTalk_Video_20190908_1555_34_090.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2019횡성서초휴양소/KakaoTalk_Video_20190908_1556_28_811.mp4", 
+			      
+				"D:/Ahn39Life/Life/400버티기/2020-07-11예미결혼/2020-10-17 옘 준상과 탁구2.mp4",
+				"D:/Ahn39Life/Life/400버티기/2020-07-11예미결혼/2020-10-17 옘 준상과 탁구3.mp4", 
+			      
+				"D:/Ahn39Life/Life/400버티기/2020-08-24정용환갑/KakaoTalk_20200830_130255696.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2020-08-24정용환갑/KakaoTalk_20200830_130343659.mp4", 
+			      
+				"D:/Ahn39Life/Life/400버티기/2020-10-01추석물회/KakaoTalk_20201002_202742816.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2020-10-01추석물회/KakaoTalk_20201002_202828323.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2020-10-01추석물회/KakaoTalk_20201002_213058146.mp4",
+			      
+				"D:/Ahn39Life/Life/400버티기/2021-07-10서울식물원/KakaoTalk_20210710_154707836.mp4", 
+				"D:/Ahn39Life/Life/400버티기/2021-07-10서울식물원/KakaoTalk_20210710_154713433.mp4", 
+			     
+				"D:/Ahn39Life/Life/500마무리/2021-09-05 안39생일/2021-09-05 감사의 말.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2021-09-05 안39생일/2021-09-05 예미 선물.mp4", 
+			      
+				"D:/Ahn39Life/Life/500마무리/2021-09-21 추석-이태원/2021-09-21 추석 이태원 사진촬영.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2021-09-21 추석-이태원/KakaoTalk_20210921_174813713.mp4", 
+			      
+				"D:/Ahn39Life/Life/500마무리/2021-11-06 갈치-호떡-스위스대사관/KakaoTalk_20211106_153554627.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2021-11-06 갈치-호떡-스위스대사관/KakaoTalk_20211106_153832726.mp4",
+			      
+			       "D:/Ahn39Life/Life/500마무리/2022-03-19 준상 생일/KakaoTalk_20220319_153602467.mp4",
+			       "D:/Ahn39Life/Life/500마무리/2022-03-19 준상 생일/KakaoTalk_20220319_162801643.mp4",
+			       "D:/Ahn39Life/Life/500마무리/2022-03-19 준상 생일/KakaoTalk_20220319_162804313.mp4",
+			       "D:/Ahn39Life/Life/500마무리/2022-03-19 준상 생일/KakaoTalk_20220319_162820291.mp4",
+			       "D:/Ahn39Life/Life/500마무리/2022-03-19 준상 생일/KakaoTalk_20220319_162823478.mp4",
+			       "D:/Ahn39Life/Life/500마무리/2022-03-19 준상 생일/KakaoTalk_20220319_162831609.mp4",
+			       "D:/Ahn39Life/Life/500마무리/2022-03-19 준상 생일/KakaoTalk_20220319_162834410.mp4",
+				"D:/Ahn39Life/Life/000우린하나/001안/2022-01-07 지평과 오리고기 상덕과 통화.mp4", 
+					"D:/Ahn39Life/Life/000우린하나/001안/2022-03-06 지하철 전세내서 출근하기.mp4",
+					"D:/Ahn39Life/Life/000우린하나/001안/2022-03-07 인도 스리랑카 여행 시청 구글어스로 따라가기.mp4",
+					"D:/Ahn39Life/Life/000우린하나/001안/집에서 당구연습하기1.mp4",
+					"D:/Ahn39Life/Life/000우린하나/001안/집에서 당구연습하기2.mp4",
+					"D:/Ahn39Life/Life/000우린하나/001안/집에서 당구연습하기3.mp4",
+		
+     				"D:/Ahn39Life/Life/500마무리/2022-01-06 골드프라자/2022-02-13 골드입구 주차 금지 성공.mp4",   
+			      
+			      "D:/Ahn39Life/Life/300지키기/2018담양죽녹원/100 죽녹원 춤.mp4",
+			      "D:/Ahn39Life/Life/300지키기/2018담양죽녹원/100죽녹원 영상11.mp4",
+			      "D:/Ahn39Life/Life/300지키기/2018담양죽녹원/100죽녹원 영상12.mp4",
+			      "D:/Ahn39Life/Life/300지키기/2018담양죽녹원/100죽녹원 영상21.mp4" ,
+			      "D:/Ahn39Life/Life/000우린하나/000행복한 순간들/2019-12-25 용과 미 병원 결혼 축하 케이크.mp4",
+	                      "D:/Ahn39Life/Life/000우린하나/000행복한 순간들/2019-05-02 예슬 카이스트 기숙사.mp4",
+			      			      
+				"D:/Ahn39Life/Life/000우린하나/001안/윤석열의 토론 엉망 이재명의 공감.mp4",			
+				"D:/Ahn39Life/Life/000우린하나/001안/백낙청 교수-이재명은 김대중 이후 최고의 정치지도자.mp4", 			
+				"D:/Ahn39Life/Life/000우린하나/001안/백낙청 교수-이재명이라는 자산을 너무 헐값에 쓰진 말자.mp4",
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/이재명이 당선되는 결정적인 증거.mp4",
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/윤당 폭망ㅋㅋ 문프 어림도 없다 예비비도 제동ㄷㄷ.mp4",
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/군사전문가도 놀란 용산 집무실 충격.mp4", 
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/이재명은 SKY 카르텔에 당했다.mp4",
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/이낙연계 박광온 선대공보단장 지시는 하지마라.mp4",
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/이낙연계 신경민 소재철 배재정 박재호.mp4",  
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/이재명을 무시하는 기득권들의 이유.mp4",  
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/문재인 죽이기 시작으로 본다 산업부 블랙리스트.mp4",  
+				"D:/Ahn39Life/Life/500마무리/2022-03-09 윤석열/개딸들의 기도문.mp4",  
+										
+			      
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03  안39 생일-양양/2022-09-03 68 62 생일축하 더신라케익 용호리 소담팬션.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03  안39 생일-양양/2022-09-03 안상구68 정용62 생일잔치1-케익.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03  안39 생일-양양/2022-09-03 안상구68 정용62 생일잔치2-신발.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-03 설악해변에서 바위섬 노래부르기.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/바위섬 김원중.mp4",			
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03  안39 생일-양양/2022-09-04 설악해변 일출1.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03  안39 생일-양양/2022-09-04 설악해변 일출2.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03  안39 생일-양양/2022-09-04 설악해변 일출3.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-03 인제 합강막국수와 자작나무숲1 (1).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 양양 후진리 소담팬션 00.mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 양양 후진리 소담팬션 01 (1).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 양양 후진리 소담팬션 01 (2).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 양양 후진리 소담팬션 01 (3).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 인제 원대리 자작나무숲.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (1).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (2).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (3).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (4).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (5).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (6).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (7).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-03 양양 설악해변 밤바다.mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (9).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (4).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (7).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (6).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (1).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (2).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 양양 후진리 소담팬션 01 (2).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (5).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 양양 후진리 소담팬션 00.mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 양양 후진리 소담팬션 01 (1).mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-03 인제 자작나무숲1.mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 인제 원대리 자작나무숲.mp4 ",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-03 인제 자작나무숲2.mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-03 인제 합강막국수와 자작나무숲1 (1).mp4",
+				"D:/Ahn39Life/Life/600 즐기기/2022-09-03 안39 생일-양양/2022-09-04 후진항 일출2 (3).mp4",
+				"D:/Ahn39Life/GoodVideo/[기발기발] 트럼프를 한 대 떄린 남자의 여유있는 모습.mp4"
+		];
+      // Get the audio element
+      //   let _video = document.querySelector('#video_list video');
+      //var _video = document.getElementById('video_list');
+      // Get the audio element
+         let _video = document.querySelector('#video_list video');
+</script>
+<script>
+      function nextvideo() {
+         // Check for last audio file in the playlist
+         if (ahnno > files.length - 2) {
+            ahnno= 0;
+         } else {
+            ahnno++;
+         }
+         _video.src = files[ahnno]; // 다른 미디어로 소스 변경
+         _video.addEventListener('ended', nextvideo, false)
+         
+         var str = document.getElementById("text");
+         str.innerHTML = files[ahnno];
+         var str2 = document.getElementById("text2");
+         str2.innerHTML = ahnno;               
+      }
+      function onemorevideo() {
+         _video.src = files[ahnno]; // 다른 미디어로 소스 변경
+         _video.addEventListener('ended', nextvideo, false)
+                  
+            
+         var str = document.getElementById("text");
+         str.innerHTML = files[ahnno];
+         var str2 = document.getElementById("text2");
+         str2.innerHTML = ahnno;               
+      }
+      function beforevideo() {
+         // Check for last audio file in the playlist
+         if (ahnno < 1) {
+            ahnno= files.length-1;
+         } else {
+            ahnno--;
+         }
+         _video.src = files[ahnno]; // 다른 미디어로 소스 변경
+         _video.addEventListener('ended', nextvideo, false)
+         
+         var str = document.getElementById("text");
+         str.innerHTML = files[ahnno];
+         var str2 = document.getElementById("text2");
+         str2.innerHTML = ahnno;               
+      }
+      function numbervideo() {	  
+         // Check for last audio file in the playlist
+         if (ahnno > files.length - 2) {
+            ahnno= 0;
+         } else {
+            ahnno++;
+         }
+         _video.src = files[ahnno]; // 다른 미디어로 소스 변경
+         _video.addEventListener('ended', nextvideo, false)
+         
+         var str = document.getElementById("text");
+         str.innerHTML = files[ahnno];
+         var str2 = document.getElementById("text2");
+         str2.innerHTML = ahnno;               
+      }
+      function randomvideo() {
+      
+         ahnno = Math.floor(Math.random() * files.length);
+         
+         if (ahnno > files.length - 2) {
+            ahnno= 0;
+         } 
+         
+         _video.src = files[ahnno]; // 다른 미디어로 소스 변경
+         _video.addEventListener('ended', randomvideo, false)
+         
+         var str = document.getElementById("text");
+         str.innerHTML = files[ahnno];
+         var str2 = document.getElementById("text2");
+         str2.innerHTML = ahnno;   
+                  
+      }
+</script>
+</body>
+</html>
